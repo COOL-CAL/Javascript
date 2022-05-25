@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let memNum = prompt('How many tourist in there?');
+        let colNum = prompt('How many people sit on one line?');
+        let rowNum = Math.ceil(parseInt(memNum) / parseInt(colNum));
+
+        document.write(`<div>총 인원 : ${memNum}</div>`);
+        document.write(`<div>한 줄 인원 : ${colNum}</div>`);
+        document.write(`<div>You need total ${rowNum} line(s).</div>`);
+    </script>
+</body>
+</html>
