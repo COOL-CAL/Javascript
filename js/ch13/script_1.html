@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #heading {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">java script</h1>
+    <p id="text">Click the text.</p>
+    <script>
+        var heading = document.querySelector('#heading');
+        // heading = document.querySelectorAll('.heading'); <- 클래스명이 heading인 모든 것들에게 배열로 값을 넘겨줌
+        heading.onclick = function() {
+            heading.style.color = 'red';
+        }
+        // 속성에게 onclick 적용, 배열에는 적용되지 않음
+        // heading[0].onclick = function() {
+        //     heading[0].style.color = 'red';
+        // }
+        // 이렇게 줘야 함.
+    </script>
+</body>
+</html>
