@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d_none {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://1.bp.blogspot.com/-jMwlZwZEM5k/XWjJE1-MpRI/AAAAAAAAm9c/bPC-VBKD5xUBQgIyyjYTx2lXYfTls2AcgCLcBGAs/s1600/12.jpg" alt="">
+    <button class="over" onclick="flagDisplay();">Show Detail</button>
+    <div id="desc" class="detail d_none">
+        <h3>title</h3>
+        <p>content</p>
+        <button id="close" onclick="flagDisplay();">Close</button>
+    </div>
+    <script>
+        // const descDiv = document.querySelector('#desc');
+        // function showDetail() {
+        //     descDiv.style.display = block;
+        // }
+        // function hideDetail() {
+        //     descDiv.style.display = none;
+        // }
+        const descDiv = document.querySelector('#desc');
+        function flagDisplay() {
+            descDiv.classList.toggle('d_none');
+        } //toggle: 위아래로 껐다 켰다 하는 스위치
+          //버튼 하나로 껐다 켰다 가능
+    </script>
+</body>
+</html>
