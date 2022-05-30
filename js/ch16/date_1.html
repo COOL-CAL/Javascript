@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const now = new Date();
+        console.log(now);
+        const date1 = new Date('1996-01-25');
+
+        date1.setFullYear(2011);
+
+        console.log(date1);
+
+        console.log(date1.getFullYear()); // getYear는 안 씀 현재 년도에서 1990를 뺀 값이 나옴
+        console.log(date1.getMonth() + 1);
+        console.log(date1.getDay()); // 요일, 0: 일요일 6: 일요일
+        console.log(now.getTime());
+        console.log(now.getHours());
+        console.log(now.getMinutes());
+        console.log(now.getSeconds());
+        console.log(now.getMilliseconds());
+    </script>
+</body>
+</html>
