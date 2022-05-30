@@ -8,9 +8,18 @@
 </head>
 <body>
     <script>
-        (function(val) {
+        // (function() {
+        //     이 안에 다 적어주는 이유: 겹치는 함수명에 덮어쓰기 되는 scope현상을 방지하기 위해서.
+        // })();
+
+        (function(val) { //익명함수
             document.write(`val : ${val}`);
         })(13);
+
+        let dd = function(val) { //일반함수
+            document.write(`val : ${val}`);
+        }
+        dd(10);
 
     </script>
 </body>

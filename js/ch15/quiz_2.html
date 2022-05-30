@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const num1 = Number(prompt(`비교할 첫 번째 숫자`));
+        const num2 = Number(prompt(`비교할 두 번째 숫자`));
+        
+        function main() {
+            if(isNaN(num1) || isNaN(num2)) {
+                return alert(`숫자를 입력해 주세요.`);
+            }
+
+            function compareNum(a, b) {
+                if ( a > b ) {
+                    return alert(`${a}(이)가 ${b}보다 큽니다.`);
+                } else if ( b > a )  {
+                    return alert(`${b}(이)가 ${a}보다 큽니다.`);
+                } else ( a === b ) 
+                    return alert(`숫자가 같습니다.`)
+                
+            }
+            compareNum(num1, num2);
+        }
+        main();
+        
+        // solve.
+        // (function() {
+        // const num1 = Number(prompt(`비교할 첫 번째 숫자`));
+        // const num2 = Number(prompt(`비교할 두 번째 숫자`));
+        
+        // if(isNaN(num1) || isNaN(num2)) {
+        // return alert(`숫자를 입력해 주세요.`);
+        // }
+
+        // function compareNum(a, b) { 
+        //     if ( num1 === num2 ) {
+        //         alert (`숫자가 같습니다.`);
+        //         return;
+        //     }
+        //     const bigNum = num > num2 ? num1 : num2;
+        //     const smallNum = num1 < num2 ? num1 : num2;
+
+        //     alert(`${bigNum}(이)가 ${smallNum}보다 큽니다.`);
+        // }
+        // compareNum(Number(num1), Number(num2));
+        // })();
+    </script>
+</body>
+</html>

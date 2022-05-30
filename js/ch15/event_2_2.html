@@ -8,14 +8,21 @@
 </head>
 <body>
     <script>
-        var x = 10;
-
-        function displayNum() {
-            console.log(`x is ${x}`);
-            console.log(`y is ${y}`);
-            var y = 20; // x is 10; y is undefined; because of hoisting.
+        const obj = {
+            onclick: null
         }
-        displayNum();
+
+        obj.onclick = function(e) {
+            console.log(e);
+            document.write('Shit');
+        }
+        const e = {
+            'target': 'What',
+            x: 169,
+            y: 189
+        };
+        obj.onclick(e);
+
     </script>
 </body>
 </html>
