@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Let's study about DOM!</h1>
+        <a href="#" onclick="addP();">see more</a> <!-- addP(); 뒤에 this.onclick=''; 들어가면 한 번만 실행됨 -->
+        <div id="info"></div>
+    </div>
+    <script>
+        let cnt = 1;
+        // function addP() {
+        //     const newP = document.createElement('p');
+        //     const txt = `DOM is a short form of document object model. ${cnt++}`;
+        //     // const txtNode = document.createTextNode(txt);
+        //     // newP.appendChild(txtNode);
+        //     // document.querySelector('#info').appendChild(newP);
+        //     const txtNode = document.createTextNode(txt);
+        //     newP.append(txt);
+        //     document.querySelector('#info').appendChild(newP);
+        // } //pretend 는 숫자가 위로 쌓임
+
+        //see more 눌렀을 때 사라지게 하기
+            const divInfo = document.querySelector('#info')
+            function addP() {
+                if(divInfo.innerHTML === '' ) {
+                const newP = document.createElement('p');
+                const txt = `DOM is a short form of document object model. ${cnt++}`;
+                newP.append(txt);
+                document.querySelector('#info').appendChild(newP);
+                } else {
+                    divInfo.innerHTML = null;
+                }
+            }
+    </script>
+</body>
+</html>

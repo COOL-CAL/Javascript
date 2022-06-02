@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="cover" src="https://i.pinimg.com/736x/a8/cf/f5/a8cff5c78847f9f752684278feb5a75e.jpg"
+    alt="cth">
+    <script>
+        const imgCover = document.querySelector('#cover');
+        imgCover.addEventListener('mouseover', function() {
+            this.src = 'https://i.pinimg.com/736x/61/8d/0e/618d0e7299a99d482afa2789ae44fa6f.jpg';
+        });
+
+        imgCover.addEventListener('mouseout', function() {
+            this.src = 'https://i.pinimg.com/736x/a8/cf/f5/a8cff5c78847f9f752684278feb5a75e.jpg';
+        });
+    </script>
+</body>
+</html>
