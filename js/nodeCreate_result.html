@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .c_pointer { cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Web programming</h1>
+    <p>Record about study subjects.</p>
+    <div>
+        <input type="text" id="subject" value="">
+        <input type="button" value="add" onclick="newReg();">
+        <input type="button" value="delete" onclick="delSub();">
+    </div>
+    <div id="itemList"></div>
+    <script>
+        /* const list = document.querySelector('#itemList'); //정보 선택해서 담아줄 곳 지정
+        function newReg() { 
+            const newI = list.appendChild(document.createElement('div'));
+            //정보 담기는 곳에 div로 보내줄 정보
+            const sub = document.querySelector('#subject');
+            //보내줄 정보에 대한 정보를 받아올 곳.
+            newI.append(sub.value); //정보값 반복 출력
+            sub.value = ""; //칸에 정보값 없애기
+        } */
+
+        // solve.
+        const sub = document.querySelector('#subject');
+        const list = document.querySelector('#itemList');
+
+        function newReg() {
+            const txt = sub.value;
+            const newI = document.createElement('div');
+            newI.classList.add('c_pointer');
+            list.prepend(newI);
+            newI.innerText = txt;
+            //newI.append(txt); 둘이 같은 기능.
+            sub.value = '';
+
+            //1. (클릭해서 지우기)
+            // newI.addEventListener("click",  () => {
+            // newI.remove(newI);
+            // });
+
+            //2.
+            newI.onclick = function() {
+                newI.remove();
+            }
+        }
+
+        function delSub() {
+            //삭제버튼으로 젤 마지막 거 지우기
+            // const lastDiv = document.querySelector('#itemList > div:last-child')
+            // lastDiv.remove();
+
+            list.lastChild.remove();
+            // itemList.removeChild(lastDiv);
+        }
+
+        function delItem() {
+            const newI = document.createElement('div');
+            const delDiv = document.querySelector('#itemList > div');
+            delDiv.remove(newI);
+        }
+    </script>
+</body>
+</html>

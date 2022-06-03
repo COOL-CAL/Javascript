@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main { width: 500px; height: 300px; }
+        #main > img { width: 100%; }
+        #sub { width: 500px; height: 150px; display: flex; }
+        #sub > img { flex-grow: 1;}
+    </style>
+</head>
+<body>
+    <div id="main">
+        <img src="https://www.thefamouspeople.com/profiles/images/calum-hood-3.jpg" alt="cth" id="cth">
+    </div>
+    <div id="sub">
+        <img src="https://www.thefamouspeople.com/profiles/images/calum-hood-3.jpg" alt="cth1" class="subPic">
+        <img src="https://i.pinimg.com/originals/ca/cb/b3/cacbb3973d504809904232eb8d45b52f.jpg" alt="cth2" class="subPic">
+        <img src="https://i.pinimg.com/736x/61/8d/0e/618d0e7299a99d482afa2789ae44fa6f.jpg" alt="cth3" class="subPic">
+    </div>
+    <script>
+        //let main = document.querySelector("#cth");
+        //let sub = document.querySelectorAll(".subPic");
+
+        //for(let i=0; i < sub.length; i++) {
+        //    sub[i].addEventListener("click",changePic);
+        //}
+
+        //function changePic() {
+        //    main.src = this.getAttribute("src");
+        //}
+
+        const imgMain = document.querySelector('#main > img');
+        const subImgs = document.querySelectorAll('#sub > img');
+        subImgs.forEach(item => {
+            item.onclick = function() {
+                imgMain.src = this.src;
+            }
+            //item.addEventListener("click", () => {
+            //    imgMain.src = item.src;
+            //});
+            //ㄴarrow function으로 쓸 때
+        });
+    </script>
+</body>
+</html>

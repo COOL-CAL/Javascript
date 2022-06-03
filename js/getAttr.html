@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="prod_pic">
+        <button onclick="changePic();">change the pic</button>
+        <img src="https://i.pinimg.com/originals/e7/f2/65/e7f265911b65c1ab937cecda6c83fa0a.jpg"
+        alt="CTH" id="CTH" width="200" height="200"
+        onclick="displaySrc();">
+    </div>
+    <script>
+        const CTH = document.querySelector("#CTH");
+
+        function changePic() {
+            // CTH.src = 'https://th.bing.com/th/id/OIP.ThEcrOe9C0gflPsHUewH6AHaGL?pid=ImgDet&rs=1';
+            CTH.setAttribute('src','https://th.bing.com/th/id/OIP.ThEcrOe9C0gflPsHUewH6AHaGL?pid=ImgDet&rs=1');
+        } // 누구의,         무엇을,     어떤 값으로
+
+        function displaySrc() {
+            console.log('getAttr: ' + CTH.getAttribute('src'));
+            //getAttribute: 새로 추가한 속성값을 가져올 때 사용.
+            //              원래 있던 값들은 밑에처럼 가져올 수 있음.
+            //get과 set은 세트.
+            console.log('.src: ' + CTH.src);
+            console.log('.alt: ' + CTH.alt);
+            console.log('.id: ' + CTH.id);
+            console.log('.width: ' + CTH.width);
+            console.log('.height: ' + CTH.height);
+            console.log('.onclick: ' + CTH.onclick);
+        }
+    </script>
+</body>
+</html>

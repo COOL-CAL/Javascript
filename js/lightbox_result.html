@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body { height: 100%; }
+        ul { list-style: none; }
+        li { display: inline-block; }
+        .pic { width: 200px; cursor: pointer; }
+        #lightbox {
+            height: 100%;
+            width: 100%;
+            background-color: #00000066;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            left: 0;
+            top: 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <ul>
+            <li><img class="pic" src="https://file1.closermag.fr/var/closermag/storage/images/media/images-des-contenus/teen/articles/2015-01-13-calum-hood-des-5sos-en-couple/calum-hood-des-5sos-en-mode-beau-gosse/4197962-1-fre-FR/Calum-Hood-des-5SOS-en-mode-beau-gosse.jpg?alias=exact1024x768_l&size=x100&format=jpeg" alt=""></li>
+            <li><img class="pic" src="https://i.pinimg.com/originals/e0/c2/63/e0c2639b21cb036ab98f8657689b784c.jpg" alt=""></li>
+            <li><img class="pic" src="https://i.pinimg.com/736x/6c/5d/0c/6c5d0ccaca566f3d972e0cfa17055c99--calum-hood-summer.jpg" alt=""></li>
+        </ul>
+    </div>
+    <div id="lightbox">
+        <img src=""
+        id="lightboxImage" alt="">
+    </div>
+
+    <script>
+        const lightbox = document.querySelector('#lightbox');
+        const lightboxImage = document.querySelector('#lightboxImage');
+        const pics = document.querySelectorAll('.pic');
+
+        //1.
+        // for(let i=0; i < pics.length; i++) {
+        //    pics[i].addEventListener("click",showLightbox);
+        // }
+
+        //2.
+        // pics.forEach((pic) => {
+        //     pic.onclick = showLightbox;
+        // });
+
+        //3.
+        pics.forEach((item) => {
+            item.addEventListener("click", showLightbox);
+        });
+
+        function showLightbox() {
+            const bigLocation = this.src;
+            lightboxImage.setAttribute('src', bigLocation);
+            lightbox.style.display = 'flex';
+        }
+        lightbox.addEventListener("click", () => {
+            lightbox.style.display = 'none';
+        });
+
+       
+    </script>
+</body>
+</html>
