@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul > li {
+            cursor: pointer;
+            list-style-type: none;
+        }
+        .clicked {
+            text-decoration: line-through;
+            color: #ccc
+        }
+    </style>
+</head>
+<body>
+    <h1>to do list</h1>
+    <ul>
+        <li><span class="check">v task 1</span></li>
+        <li><span class="check">v task 2</span></li>
+        <li><span class="check">v task 3</span></li>
+        <li><span class="check">v task 4</span></li>
+        <li><span class="check">v task 5</span></li>
+    </ul>
+
+    <script>
+        const task = document.querySelectorAll('.check');
+        console.log(task);
+        
+        for(let i=0; i<task.length; i++) {
+                task[i].onclick = function() {
+                    this.style.textDecoration = 'line-through';
+                    this.style.color = '#ccc';
+                }
+            }
+
+        // task.forEach(li => {
+        //     li.addEventListener("click", () => {
+        //         li.classList.toggle("clicked");
+        //     });
+        // });
+
+        //solve.
+        // task.forEach(item => { //forEach한테 함수 1개를 아규먼트로 호출
+        //     item.addEventListener('click', (e) => {
+        //         e.target.classList.toggle('clicked');
+        //     });
+        // });
+    </script>
+</body>
+</html>

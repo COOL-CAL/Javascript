@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type='number'] {
+            width: 50px;
+        }
+        table { border-collapse: collapse; }
+        table, td {
+            border: 1px solid #000;
+        }
+        td { padding: 5px; }
+        #result { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="number" id="rowNum">행
+        <input type="number" id="colNum">열
+        <button id="write">작성</button>
+        <!-- <button onclick="main(rowNum.value, colNum.value);">작성</button> -->
+    </div>
+    <br>
+    <div id="result"></div>
+
+    <script>
+        //solve.
+        const inputRowNum = document.querySelector('#rowNum');
+        const inputColNum = document.querySelector('#colNum');
+        const btnWrite = document.querySelector('#write');
+        const divResult = document.querySelector('#result');
+
+        btnWrite.addEventListener('click', function() {
+            const rowNum = Number(inputRowNum.value);
+            const colNum = Number(inputColNum.value);
+            const table = document.createElement('table');
+            divResult.innerHTML = '';
+            divResult.appendChild(table);
+
+            for(let i=0; i<rowNum; i++) {
+                const tr = document.createElement('tr');
+                table.appendChild(tr);
+                for(let z=0; z<colNum; z++) {
+                    const td = document.createElement('td');
+                    tr.appendChild(td);
+                    td.innerText = `${i},${z}`;
+                }
+            }
+        });
+
+
+
+        // function main(n1,n2){
+        //     let tag = "<table border='1'>";
+        //     const b1 = parseInt(n1);
+        //     const b2 = parseInt(n2);
+
+        //     for(i = 0; i<= b1-1; i++){
+        //         tag += "<tr>";
+        //         for(z=0; z <= b2-1; z++){
+        //             tag += "<td>"+i+"."+z+"</td>";
+        //         }
+        //         tag += "</tr>";
+        //     }
+        //     tag += "</table>";
+        //     result.innerHTML = tag;
+        // }
+
+
+    // <!-- <div>
+    //     <input type="number" id="rowNum">행
+    //     <input type="number" id="colNum">열
+    //     <button onclick="newT(rowNum.value, colNum.value);">작성</button>
+    // </div>
+    // <div id="result"></div>
+
+    // <script>
+    //     function newT(row, col) {
+    //         let tab = "<table border='1'>";
+    //         const rNum = parseInt(row);
+    //         const cNum = parseInt(col);
+
+    //         for(i=0; i<=rNum-1; i++) {
+    //             tab +="<tr>";
+    //                 for(z=0; z<=cNum-1; z++); {
+    //                     tab += "<td>" + i + "." + z + "</td>";
+    //                 }
+    //             tab += "</tr>";
+    //             console.log(tab);
+    //         }
+    //         tab += "</table>";
+    //         result.innerHTML = tab;
+    //     }
+
+        // const row = document.querySelectorAll('#rowNum').value;
+        // const col = document.querySelectorAll('#colNum').value;
+
+        // function newT() {
+        //     const num = "";
+        //     const table = document.createElement('table');
+        //     for(let i=0; i<row.length; i++) {
+        //         let tr = document.createElement("tr");
+        //         for(z=0; z<col.length; z++) {
+        //             let td = document.createElement("td");
+        //         }
+        //         const table = document.createElement('table');
+        //         document.querySelector("result").innerHTML = num;
+        //     }
+        // }
+         -->
+    </script>
+</body>
+</html>
