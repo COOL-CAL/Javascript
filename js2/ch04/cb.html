@@ -20,12 +20,68 @@
             return n1 * n2;
         }
 
+        // function fnMod(n1, n2) {
+        //     return n1 / n2;
+        // }
+
+        // const r4 = calc(fnMod, 100, 5);
+        // console.log(r4);
+
+        const r5 = calc(function(n1, n2) {
+            return n1 / n2;
+        }, 100, 5);
+        console.log(r5);
+
+        function fnMod (n1, n2) {
+            return n1 / n2;
+        }
+
+        const r6 = calc(fnMod, 100, 25);
+        console.log(r6);
+
+        const r7 = calc(function(n1, n2) {
+            return n1 / n2
+        }, 300, 5);
+        console.log(r7);
+
+        function fnMod(n1, n2) {
+            return n1 / n2;
+        }
+
+        const r8 = calc(fnMod, 300, 3);
+        console.log(r8);
+
+        const r9 = calc(function(n1, n2) {
+            return n1 / n2;
+        }, 300, 50);
+        console.log(r9);
+
+        function fnMod (n1, n2) {
+            return n1 / n2;
+        }
+
+        const r10 = calc(fnMod, 500, 5);
+        console.log(r10);
+
+        const r11 = calc(function(n1, n2) {
+            return n1 / n2;
+        }, 500, 100);
+        console.log(r11);
+
+
+
+        
         const r1 = calc(fnSum, 10, 20);
         console.log(r1);
         // calc라는 틀 안에 fnSum이라는 함수에 10, 20 값을 주고 값을 찍어냈다..? 
 
         const r2 = calc(fnMulti, 10, 20);
         console.log(r2);
+
+        const r3 = calc(function(n1,n2) {
+            return n1 - n2;
+        }, 100, 20);
+        console.log(r3);
 
         // console.log(fnSum(4, 5));
         // const sum = fnSum(4, 5);
