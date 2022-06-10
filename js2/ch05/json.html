@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //XML 장점 없음.
+        //JSON (Javascript Object Notation)
+        //자바스크립에서 객체 만들 때 사용하는 문법을 데이터로 표현
+        
+        //객체화, 자료 빼오기 쉬움,
+        const userVo_1 = { // <-여기에 주소값이 저장됨 
+            'name': 'Shin',
+            'age' : 20,
+            'addr' : 'Daegu'
+        };
+        const userVo_2 = {
+            'name': 'Lee',
+            'age' : 22,
+            'addr' : 'Jinhae'
+        };
+
+        console.log(userVo_1);
+        console.log(userVo_2);
+        console.log(userVo_1.addr);
+        console.log(userVo_1['addr']);
+        const json1 = JSON.stringify(userVo_1);
+        console.log(json1);
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function pMethod(resolve, reject) { // 둘 중에 하나만 호출하는 식으로 짜야함.
+            resolve('해결'); //promise가 넣어준 콜백함수
+        }
+        const p1 =  new Promise(pMethod); // 생성자 함수를 객체화 할 때 new 사용(생성자 함수)
+
+        function resolveMethod(result) {
+            console.log(`resolveMethod : ${result}`);
+        }
+        function catchMethod(result) {
+            console.log(`catchMethod : ${result}`);
+        }
+        p1.then(resolveMethod); //메소드 함수 사용하는 근본적 이유: 호출하기 위해서
+        p1.catch(catchMethod);
+    </script>
+</body>
+</html>
