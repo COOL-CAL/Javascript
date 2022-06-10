@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul { list-style: none; }
+        .container {
+            max-width: 1600px;
+            margin: 10px auto;
+            background-color: #f5f5f5;
+        }
+        .listing-card {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .listing-card li {
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid #f0f0f0;
+            padding: 20px;
+        }
+        .listing-card li .img {
+            padding-top: 70%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="listing-card" id="list">
+            <!-- <li>
+                <div class="img" style="background-image:url('')></div>
+                <div class="info">
+                    <strong class="author"></strong>
+                </div>
+            </li> -->
+        </ul>
+        <button onclick="getData();">데이터 가져오기</button>
+    </div>
+
+    <script>
+        let page = 1;
+        const ulList = document.querySelector('#list');
+
+        function getData() {
+            console.log(`page: ${page}`);
+
+            const url = `https://picsum.photos/v2/list?limit=30&page=${page++}`;
+            fetch(url).then(function(res) {
+                return res.json();
+            }).then(function(data) {
+                console.log(data);
+                makeList(data);
+
+            });
+        }
+
+        function makeList(data) {
+            data.forEach(function(item) {
+                const img = makeImg(item);
+
+                const li = document.createElement('li');
+                ulList.appendChild(li);
+                const div1 = document.createElement('div');
+                li.appendChild(div1);
+                div1.classList.add("img");
+                div1.setAttribute("style", `background-image: url(${img.src})`)
+                const div2 = document.createElement('div');
+                li.appendChild(div2);
+                const st = document.createElement('strong');
+                div2.appendChild(st);
+                st.innerHTML = `${item.author}`;
+            });
+        }
+
+        function makeImg(item) {
+            const img = document.createElement('img');
+                
+            img.src = `https://picsum.photos/id/${item.id}/${parseInt(item.width * 0.1 )}/${parseInt(item.height * 0.1)}`;
+            console.log(img.src);
+            return img;
+        }
+        
+    </script>
+</body>
+</html>
