@@ -26,15 +26,15 @@
             'map': function(cb) {
                 const tempArr = [];
                 for(let i=0; i<this.length; i++) {
-                    tempArr.push(cb(this[i]));
+                    tempArr.push(cb(this[i],i));
                 }
                 return tempArr;
             },
             'filter': function(cb) {
                 const tempArr = [];
                 for(let i=0; i<this.length; i++) {
-                    if(i > this.length - 1) {
-                        tempArr.push(cb(this[i]));
+                    if( cb(this[i], i ) {
+                        tempArr.push(this[i]);
                     }
                 }
                 return tempArr;
@@ -43,7 +43,7 @@
                 let strArr = '[';
                 for(let i=0; i<this.length; i++) {
                     strArr += this[i];
-                    if(i > this.length - 1) {
+                    if(i < this.length - 1) {
                         strArr += ',';
                     }
                 }
