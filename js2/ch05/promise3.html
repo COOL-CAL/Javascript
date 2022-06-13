@@ -14,13 +14,15 @@
         2. promise 객체 만들 때 보내는 콜백함수,
            resolve를 호출하면 then 실행,
            reject를 호출하면 catch 실행.
-        3. 2번 콜백에서 리텁 값을 resolve에 아규먼트로 사용한 promise 객체가 리턴 됨.
+        3. 2번 콜백에서 리턴 값을 resolve에 아규먼트로 사용한 promise 객체가 리턴 됨.
         */ 
                                 //1번 콜백
         const p1 = new Promise(function(resolve) {
             resolve('hi');//resolve, reject는 값 여러 개 보내도 파라미터 1개만 출력됨.
         });
 
+        //then 메소드 안은 이런 식으로 구성되어 있을 것.
+        // const param = 'hi';
         // const val = cb('hi');
         // return new Promise(function(resolve) {
         //     resolve('val');
@@ -35,6 +37,14 @@
         p2.then(function(result) {
             console.log(`p2 : ${result}`);
         });
+
+        // line 32-39를 아래와 같이 작성 가능 (method chaining 체인 기법)
+        // p1.then(function(result) {
+        //     console.log(`p1: ${result}`);
+        //     return 'hello';
+        // }).then(function(result) {
+        //     console.log(`p2: ${result}`);
+        // });
 
 
     </script>

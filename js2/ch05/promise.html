@@ -9,7 +9,7 @@
 <body>
     <script>
         function pMethod(resolve, reject) { // 둘 중에 하나만 호출하는 식으로 짜야함.
-            resolve('해결'); //promise가 넣어준 콜백함수
+            resolve('해결'); //promise가 보내준 콜백함수
         }
         const p1 =  new Promise(pMethod); // 생성자 함수를 객체화 할 때 new 사용(생성자 함수)
 
