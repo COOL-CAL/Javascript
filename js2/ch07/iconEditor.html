@@ -28,8 +28,21 @@
 
             //all clear button
             const btnAllClear = elt('input', {type:'button', value:'All Clear'});
-            parent.appendChild(btnAllClear);
+            //solve.
+            // btnAllClear.addEventListener('click', function(e) {
+            //     const tds = document.querySelectorAll('td');
+            //     tds.forEach(function(item) {
+            //         item.style.backgroundColor = '';
 
+                //위의 3줄과 같은 기능.
+                // cells.forEach(function(item) {
+                //     item.style.backgroundColor = '';
+                // });
+            //     })
+            // })
+
+            parent.appendChild(btnAllClear);
+        
             //table
             const table = elt('table');
             parent.appendChild(table);
@@ -54,16 +67,33 @@
                     //     td.style.backgroundColor = inputColor.value;
                     // });
 
-                    //색깔 넣었다 빼기.
+                    // 색깔 넣었다 빼기 + rgb -16진수 교환
                     td.addEventListener('click', (e) => {
-                        if(e.target.style.backgroundColor == "") {
+                        if(e.target.style.backgroundColor === "" || e.target.color16 !== inputColor.value) {
                             e.target.style.backgroundColor = inputColor.value;
-                        }else{
-                            e.target.style.backgroundColor = "";
+                            e.target.color16 = inputColor.value;
+                        } else {
+                            e.target.style.backgroundColor = '';
                         }
                     });
-                };
+                }
+                const tds = document.querySelectorAll('td');
+                btnAllClear.addEventListener('click', () => {
+                tds.forEach(item => {
+                    item.style.backgroundColor = '';
+                    })
+                })
             }
+                    // let으로 변수 만들어서 사용하면 이해하기 더 쉬움
+                    // let colorStr = '';
+                    // td.addEventListener('click', function (e) {
+                    //     if (e.target.style.backgroundColor === '' || colorStr !== inputColor.value) {
+                    //         e.target.style.backgroundColor = inputColor.value;
+                    //         colorStr = inputColor.value;
+                    //     } else {
+                    //         e.target.style.backgroundColor = '';
+                    //     }
+                    // });
 
             //for문 밖에서 쓴 것.
             // const Color = document.querySelector('input[type=color]');
@@ -78,10 +108,22 @@
             // })
             // })
 
-            //
+            //rgb -> 16진수로 바꾸기
+            // function convertRGBtoHex(rgb) {
+            //     if(rgb === '') {
+            //         return '';
+            //     }
+            //     const colors = rgb.substring(rgb.indexOf('(') + 1, rgb.lastIndexOf(')')).split(/,\s*/);
+            //     return '#' + colorToHex(colors[0]) + colorToHex(colors[1]) + colorToHex(colors[2]);
+            // }
 
+            // function colorToHex(color) {
+            //     var hexadecimal = color.toString(16);
+            //     return hexadecimal.length == 1 ? "0" + hexadecimal : hexadecimal;
+
+            // }
         }
-        createIconEditor(document.body, 10, 10);
+        createIconEditor(document.body, 15, 15);
     </script>
 </body>
 </html>

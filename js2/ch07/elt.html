@@ -19,7 +19,9 @@
             if(attr) {
                 for(const item in attr) { //객체 당 키값 빼오기
                     if(attr.hasOwnProperty(item)) {
+                    // 객체.    메소드     문자열
                         node.setAttribute(item, attr[item]);
+                    //  객체              문자열  문자열
                     }
                 }
             }

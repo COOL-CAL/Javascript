@@ -13,6 +13,8 @@
             age: 20
         };
         console.log(obj1.hasOwnProperty('name'));
+        //false일 경우, 부모로 상속받은 경우, 자기 자신이 속성을 가지고 있지 않은 경우
+        //true일 경우, 자기자신의 속성일 경우
         console.log(obj1.hasOwnProperty('age'));
         obj1.addr = '경기도';
         console.log(obj1.hasOwnProperty('addr'));
